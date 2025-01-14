@@ -1,0 +1,87 @@
+/* Centrer le formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Suppression des bordures et augmentation de la taille de mat-form-field */
+mat-form-field {
+    width: 100%;
+    margin-bottom: 16px;
+    background: transparent; /* Supprime toute couleur de fond */
+    border: none; /* Supprime les bordures */
+    padding: 8px 0; /* Ajoute un peu d'espace pour agrandir visuellement */
+    font-size: 18px; /* Augmente légèrement la taille du texte */
+}
+
+/* Style pour le conteneur des champs */
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    border: none; /* Supprime la bordure du conteneur */
+    border-radius: 0; /* Supprime les coins arrondis par défaut */
+    padding: 8px 0; /* Ajoute de l'espace vertical */
+}
+
+/* Style pour le placeholder */
+.mat-form-field-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #666; /* Couleur douce pour le texte de placeholder */
+}
+
+/* Style pour l'input matInput */
+input[matInput] {
+    font-size: 18px; /* Agrandit le texte */
+    padding: 8px 0; /* Espace interne pour une meilleure ergonomie */
+    border: none; /* Supprime les bordures */
+    outline: none; /* Supprime les contours */
+}
+
+/* Lorsque le champ est actif ou en focus */
+.mat-form-field-appearance-fill .mat-form-field-flex:focus-within {
+    background-color: #f0f0f0; /* Ajoute une couleur légère au focus */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ajoute un effet léger au focus */
+}
+
+
+/* Bouton de soumission stylisé */
+button[type="submit"] {
+    background-color: #ebddff; /* Couleur primaire */
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #3700b3; /* Couleur foncée pour hover */
+}
+
+/* Ajouter un peu d'espace entre les champs */
+p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style global pour un fond agréable */
+body {
+    background-color: #eef2f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
