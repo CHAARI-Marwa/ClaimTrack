@@ -29,7 +29,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   sub():void{
-    const user={...this.form.value, role:"client"}
+    const user={...this.form.value, role:"client", articlesVendus:[]}
     this.us.registerUser(user).subscribe(()=>{
       console.log("done")
     })

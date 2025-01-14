@@ -1,3 +1,5 @@
+import { ArticleVendu } from "./articlevendu";
+
 export interface User
 {
     id: number;
@@ -6,4 +8,5 @@ export interface User
     email: string;
     password: string;
     role: string; 
+    articlesVendus: ArticleVendu[] ;
 }
