@@ -2,18 +2,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ArticleVenduComponent } from './article-vendu/article-vendu.component';
 
 const routes: Routes = [
   {
-    path : 'login',
+    path: 'login',
     component: LoginComponent
   },
   {
-    path : 'signup',
+    path: 'signup',
     component: RegistrationComponent
   },
   {
-    path : '**',
+    path: 'articles', 
+    component: ArticleVenduComponent
+  },
+  {
+    path: '**',
     component: LoginComponent
   }
 ];

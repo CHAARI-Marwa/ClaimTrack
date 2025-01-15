@@ -11,12 +11,20 @@ import { RegistrationComponent } from './registration/registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserService } from 'src/services/user.service';
 import { LoginComponent } from './login/login.component';
+import { ArticleVenduComponent } from './article-vendu/article-vendu.component';
+import { PieceRechangeDetailsComponent } from './piece-rechange-details/piece-rechange-details.component';
+import { FormPieceRechangeDetailsComponent } from './form-piece-rechange-details/form-piece-rechange-details.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    ArticleVenduComponent,
+    PieceRechangeDetailsComponent,
+    FormPieceRechangeDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,7 +34,14 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 3000, // Durée de la notification
+      positionClass: 'toast-top-right', // Position de la notification
+      preventDuplicates: true, // Éviter les doublons
+    })
+    
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
