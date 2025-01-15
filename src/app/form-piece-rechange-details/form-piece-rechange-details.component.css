@@ -1,0 +1,95 @@
+form {
+    background-color: #f8f9fa; /* Fond très clair, presque blanc */
+    padding: 2rem;
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Ombre légère */
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%; /* Assurer la largeur maximale disponible */
+}
+
+form .mb-3 {
+    margin-bottom: 1.5rem; /* Espacement entre les champs */
+}
+
+form label {
+    font-size: 1.1rem; /* Taille du texte du label */
+    font-weight: bold;
+    color: #6c757d; /* Gris doux */
+    display: block; /* Empêcher le texte du label d'être sur la même ligne */
+    margin-bottom: 0.5rem; /* Espacement sous le label */
+}
+
+form input.form-control {
+    border-radius: 0.75rem; /* Coins arrondis */
+    border: 1px solid #ced4da; /* Bordure grise claire */
+    padding: 1rem; /* Plus d'espace intérieur */
+    font-size: 1rem; /* Taille du texte plus grande */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%; /* S'assurer que le champ prend toute la largeur disponible */
+}
+
+form input.form-control:focus {
+    border-color: #68a4be; /* Bordure bleue au focus */
+    box-shadow: 0 0 0 0.2rem rgba(128, 199, 161, 0.25); /* Ombre verte claire au focus */
+    outline: none; /* Supprimer le contour par défaut */
+}
+
+form input[required] {
+    border: 1px solid #68a4be; /* Bordure bleue claire pour les champs obligatoires */
+}
+
+form input:valid {
+    border-color: #ced4da; /* Bordure inchangée pour les champs valides */
+}
+
+form input:invalid {
+    border-color: #559ab5; /* Bordure rouge clair pour les champs invalides */
+}
+
+form button {
+    background-color: #68a4be; /* Bleu clair */
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.75rem; /* Coins arrondis */
+    font-size: 1.125rem;
+    transition: background-color 0.3s;
+    width: 100%; /* Assurer que le bouton prend toute la largeur */
+}
+
+form button:hover {
+    background-color: #4e8f9e; /* Bleu légèrement plus foncé au survol */
+}
+
+form .d-grid {
+    margin-top: 1.5rem; /* Espacement au-dessus du bouton */
+}
+
+form.submitted input.form-control {
+    background-color: #e9ecef; /* Fond très clair pour les champs soumis */
+    pointer-events: none; /* Désactiver les champs soumis */
+}
+
+form.submitted button {
+    background-color: #d6d8db; /* Couleur grise claire pour le bouton une fois soumis */
+    pointer-events: none; /* Désactiver le bouton une fois soumis */
+}
+
+/* Style des messages d'erreur */
+form .error-message {
+    color: #559ab5; /* Rouge pour les messages d'erreur */
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+/* Formulaire responsive */
+@media (max-width: 767px) {
+    form {
+        padding: 1.5rem; /* Réduire le padding sur les petits écrans */
+    }
+
+    form button {
+        padding: 1rem; /* Adapter la taille du bouton sur mobile */
+    }
+}

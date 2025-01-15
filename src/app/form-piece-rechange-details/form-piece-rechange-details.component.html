@@ -1,1 +1,22 @@
-<p>form-piece-rechange-details works!</p>
+<form #form="ngForm" (submit)="onSubmit(form)" [class.submitted]="PieceRechangeService.formSubmitted" novalidate autocomplete="off">
+    <input type="hidden" name="PieceId" [value]="PieceRechangeService.formData.PieceId">
+
+    <div class="mb-3">
+      <label>Piece Name</label>
+      <input class="form-control form-control-lg" placeholder="IntitulePiece" #cardOwnerName="ngModel" name="IntitulePiece"
+        [(ngModel)]="PieceRechangeService.formData.IntitulePiece" required>
+    </div>
+
+    <div class="mb-3">
+      <label>Quantite</label>
+      <input class="form-control form-control-lg" placeholder="Quantite" #cardNumber="ngModel"
+        name="Quantite" [(ngModel)]="PieceRechangeService.formData.Quantite" >
+    </div>
+
+    <div class="d-grid">
+      <button class="btn btn-lg btn-success" type="submit">
+        Submit
+      </button>
+    </div>
+  
+  </form>
