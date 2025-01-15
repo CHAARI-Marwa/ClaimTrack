@@ -15,6 +15,12 @@ import { ArticleVenduComponent } from './article-vendu/article-vendu.component';
 import { PieceRechangeDetailsComponent } from './piece-rechange-details/piece-rechange-details.component';
 import { FormPieceRechangeDetailsComponent } from './form-piece-rechange-details/form-piece-rechange-details.component';
 import { ToastrModule } from 'ngx-toastr';
+import { HomeclientComponent } from './homeclient/homeclient.component';
+import { ReclamationformComponent } from './reclamationform/reclamationform.component';
+import { HomeadminComponent } from './homeadmin/homeadmin.component';
+import { ReclamationComponent } from './reclamation/reclamation.component';
+import { ClientComponent } from './client/client.component';
+import { ArticleformComponent } from './articleform/articleform.component';
 
 
 @NgModule({
@@ -25,6 +31,12 @@ import { ToastrModule } from 'ngx-toastr';
     ArticleVenduComponent,
     PieceRechangeDetailsComponent,
     FormPieceRechangeDetailsComponent,
+    HomeclientComponent,
+    ReclamationformComponent,
+    HomeadminComponent,
+    ReclamationComponent,
+    ClientComponent,
+    ArticleformComponent,
   ],
   imports: [
     BrowserModule,

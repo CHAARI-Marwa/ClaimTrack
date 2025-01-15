@@ -10,13 +10,27 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
+  private baseUrl = 'https://localhost:7022/api/User';
+
   registerUser( u : User ):Observable<void>{
-    return this.http.post<void>('https://localhost:7022/api/User/signup', u);
+    return this.http.post<void>(`${this.baseUrl}/signup`, u);
   }
 
   loginUser(email: string, password: string): Observable<any> {
     const loginRequest = { email, password };
-    return this.http.post<any>('https://localhost:7022/api/User/login', loginRequest);
+    return this.http.post<any>(`${this.baseUrl}/login`, loginRequest);
+  }
+  
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.baseUrl);
+  }
+
+  deleteUser(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
+  editUser(user: User): Observable<User> {
+    return this.http.put<User>(`${this.baseUrl}/${user.id}`, user);
   }
 
 }

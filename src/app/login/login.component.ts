@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/services/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from 'src/services/user.service';
 })
 export class LoginComponent  implements OnInit {
 
-  constructor(private us: UserService){}
+  constructor(private us: UserService, private router: Router){}
   form!: FormGroup;
 
   ngOnInit() {
@@ -24,10 +25,26 @@ export class LoginComponent  implements OnInit {
     });
   }
 
-  sub():void{
-    const user={...this.form.value}
-    this.us.loginUser(user.email,user.password).subscribe(()=>{
-      console.log("done")
-    })
+  sub(): void {
+    const user = { ...this.form.value };
+    this.us.loginUser(user.email, user.password).subscribe(
+      (response) => {
+        console.log("Response from backend:", response);
+        const userId = response?.user?.id;
+        if (!userId) {
+          console.error("User ID is undefined");
+          return;
+        }
+        if(response.user.role=="client"){
+          this.router.navigate(['/dashboardclient', userId]);}
+        else{
+          this.router.navigate(['/dashboardadmin']);
+        }
+      },
+      (error) => {
+        console.error('Login failed', error);
+      }
+    );
   }
+  
 }

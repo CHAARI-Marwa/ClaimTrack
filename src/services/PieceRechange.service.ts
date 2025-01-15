@@ -8,7 +8,7 @@ import { PieceRechangeDetails } from 'src/models/PieceRechangeDetails';
 })
 export class PieceRechangeService {
 
-  url = 'https://localhost:44340/api/PieceDetail'
+  url = 'https://localhost:7022/api/PieceDetail'
   list: PieceRechangeDetails[] = [];
   formData: PieceRechangeDetails = new PieceRechangeDetails()
   formSubmitted: boolean = false;
