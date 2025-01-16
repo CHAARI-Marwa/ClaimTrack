@@ -41,9 +41,9 @@ export class ReclamationformComponent implements OnInit {
         const diffInMonths = diffInTime / (1000 * 3600 * 24 * 30);
   
         if (diffInMonths <= article.dureeGarantie) {
-          this.reclamation.statut = 'Gratuit';
+          this.reclamation.statut = 'Encore sous garantie : intervention gratuite';
         } else {
-          this.reclamation.statut = 'Payant';
+          this.reclamation.statut = 'Plus sous garantie : intervention payante';
         }
   
         this.reclamationService.addReclamation(this.reclamation).subscribe(
