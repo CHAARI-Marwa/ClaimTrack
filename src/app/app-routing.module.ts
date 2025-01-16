@@ -10,6 +10,8 @@ import { HomeadminComponent } from './homeadmin/homeadmin.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { ClientComponent } from './client/client.component';
 import { ArticleformComponent } from './articleform/articleform.component';
+import { InterventionFormComponent } from './intervention-form/intervention-form.component';
+import { InterventionComponent } from './intervention/intervention.component';
 
 const routes: Routes = [
   {
@@ -19,7 +21,7 @@ const routes: Routes = [
       { path: 'articles', component: ArticleVenduComponent },
       { path: 'pieces', component: PieceRechangeDetailsComponent },
       { path: 'reclamations', component: ReclamationComponent },
-      { path: 'interventions', component: HomeadminComponent },
+      { path: 'interventions', component: InterventionComponent },
       { path: 'clients', component: ClientComponent },
       { path: 'addarticle', component: ArticleformComponent },
     ],
@@ -36,24 +38,31 @@ const routes: Routes = [
   //   path: 'dashboardadmin',
   //   component: FormPieceRechangeDetailsComponent
   // },
-  // {
-  //   path: 'dashboardadmin/articles',
-  //   component: ArticleVenduComponent
-  // },
-  // {
-  //   path: 'dashboardadmin/pieces',
-  //   component: PieceRechangeDetailsComponent
-  // },
-  // {
-  //   path: 'dashboardadmin/reclamations',
-  //   component: HomeadminComponent
+  {
+    path: 'dashboardadmin/articles',
+    component: ArticleVenduComponent
+  },
+  {
+    path: 'dashboardadmin/pieces',
+    component: PieceRechangeDetailsComponent
+  },
+  {
+    path: 'dashboardadmin/reclamations',
+    component: HomeadminComponent
 
-  // },
-  // {
-  //   path: 'dashboardadmin/interventions',
-  //   component: HomeadminComponent
+  },
+  {
+    path: 'dashboardadmin/reclamations',
+    component: InterventionComponent
 
-  // },
+  },
+  { path: 'intervention-form/:reclamationId',
+     component: InterventionFormComponent },
+     {
+      path: 'dashboardadmin/interventions',
+      component: InterventionComponent
+  
+    },
   {
     path: 'login',
     component: LoginComponent

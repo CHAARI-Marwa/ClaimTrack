@@ -1,20 +1,25 @@
-form {
-    background-color: #f8f9fa; /* Fond très clair, presque blanc */
+.form-intervention-container {
+    background-color: #f8f9fa; /* Fond très clair */
     padding: 2rem;
     border-radius: 8px; /* Coins arrondis */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Ombre légère */
     max-width: 600px;
     margin: 0 auto;
-    width: 100%; /* Assurer la largeur maximale disponible */
-    
-    /* Ajout pour centrage vertical */
+    width: 100%; /* Largeur maximale disponible */
     position: absolute;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Centrage vertical et horizontal */
 }
 
-form .mb-3 {
+.form-intervention-container h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #495057; /* Couleur du titre */
+    margin-bottom: 1rem;
+}
+
+form .form-group {
     margin-bottom: 1.5rem; /* Espacement entre les champs */
 }
 
@@ -26,7 +31,8 @@ form label {
     margin-bottom: 0.5rem; /* Espacement sous le label */
 }
 
-form input.form-control {
+form input.form-control,
+form select.form-control {
     border-radius: 0.75rem; /* Coins arrondis */
     border: 1px solid #ced4da; /* Bordure grise claire */
     padding: 1rem; /* Plus d'espace intérieur */
@@ -35,22 +41,32 @@ form input.form-control {
     width: 100%; /* S'assurer que le champ prend toute la largeur disponible */
 }
 
-form input.form-control:focus {
+form input.form-control:focus,
+form select.form-control:focus {
     border-color: #68a4be; /* Bordure bleue au focus */
     box-shadow: 0 0 0 0.2rem rgba(128, 199, 161, 0.25); /* Ombre verte claire au focus */
     outline: none; /* Supprimer le contour par défaut */
 }
 
-form input[required] {
+form input[required],
+form select[required] {
     border: 1px solid #68a4be; /* Bordure bleue claire pour les champs obligatoires */
 }
 
-form input:valid {
+form input:valid,
+form select:valid {
     border-color: #ced4da; /* Bordure inchangée pour les champs valides */
 }
 
-form input:invalid {
+form input:invalid,
+form select:invalid {
     border-color: #559ab5; /* Bordure rouge clair pour les champs invalides */
+}
+
+form .form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
 }
 
 form button {
@@ -61,44 +77,37 @@ form button {
     border-radius: 0.75rem; /* Coins arrondis */
     font-size: 1rem;
     transition: background-color 0.3s;
-    width: 50%; /* Assurer que le bouton prend toute la largeur */
-    display: block; /* Nécessaire pour que margin auto fonctionne sur les éléments en ligne */
-    margin: 0 auto; /* Centre le bouton horizontalement */
+    width: 48%; /* Largeur presque égale pour les deux boutons */
 }
-
 
 form button:hover {
     background-color: #538db4; /* Bleu légèrement plus foncé au survol */
 }
 
-form .d-grid {
-    margin-top: 1.5rem; /* Espacement au-dessus du bouton */
+form button[disabled] {
+    background-color: #d6d8db; /* Couleur grise pour les boutons désactivés */
+    cursor: not-allowed;
 }
 
-form.submitted input.form-control {
-    background-color: #e9ecef; /* Fond très clair pour les champs soumis */
-    pointer-events: none; /* Désactiver les champs soumis */
-}
-
-form.submitted button {
-    background-color: #d6d8db; /* Couleur grise claire pour le bouton une fois soumis */
-    pointer-events: none; /* Désactiver le bouton une fois soumis */
-}
-
-/* Style des messages d'erreur */
 form .error-message {
-    color: #71a8ba; /* Rouge pour les messages d'erreur */
+    color: #71a8ba; /* Couleur pour les messages d'erreur */
     font-size: 0.875rem;
     margin-top: 0.5rem;
 }
 
 /* Formulaire responsive */
 @media (max-width: 767px) {
-    form {
+    .form-intervention-container {
         padding: 1.5rem; /* Réduire le padding sur les petits écrans */
     }
 
     form button {
         padding: 1rem; /* Adapter la taille du bouton sur mobile */
+        width: 100%; /* Assurer que le bouton prend toute la largeur sur mobile */
+        margin-bottom: 1rem;
+    }
+
+    form .form-actions {
+        flex-direction: column; /* Centrer les boutons verticalement sur mobile */
     }
 }

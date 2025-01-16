@@ -1,24 +1,28 @@
 <div class="article-list-container">
-    <h2>Liste des réclamations</h2>
-    <table *ngIf="reclamations.length > 0">
+  <h2>Liste des réclamations</h2>
+  <table *ngIf="reclamations.length > 0">
       <thead>
-        <tr>
-          <th>Sujet</th>
-          <th>Description</th>
-          <th>Statut</th>
-          <th>Date de réclamation</th>
-          <th>ID Article</th>
-        </tr>
+          <tr>
+              <th>Sujet</th>
+              <th>Description</th>
+              <th>Payment</th>
+              <th>Date de réclamation</th>
+              <th>ID Article</th>
+              <th>Intervention</th> 
+          </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let reclamation of reclamations">
-          <td>{{ reclamation.sujet }}</td>
-          <td>{{ reclamation.description }}</td>
-          <td>{{ reclamation.statut }}</td>
-          <td>{{ reclamation.dateReclamation | date: 'short' }}</td>
-          <td>{{ reclamation.idArticle }}</td>
-        </tr>
+          <tr *ngFor="let reclamation of reclamations">
+              <td>{{ reclamation.sujet }}</td>
+              <td>{{ reclamation.description }}</td>
+              <td>{{ reclamation.statut }}</td>
+              <td>{{ reclamation.dateReclamation | date: 'short' }}</td>
+              <td>{{ reclamation.idArticle }}</td>
+              <td>
+                <button (click)="passerIntervention(reclamation.idArticle)">Passer à l'intervention</button>
+              </td> 
+          </tr>
       </tbody>
-    </table>
-    <p *ngIf="reclamations.length === 0">Aucune réclamation trouvée.</p>
-  </div>
+  </table>
+  <p *ngIf="reclamations.length === 0">Aucune réclamation trouvée.</p>
+</div>

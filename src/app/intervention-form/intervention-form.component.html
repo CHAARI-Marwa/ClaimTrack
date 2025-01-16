@@ -1,0 +1,79 @@
+<div class="form-intervention-container">
+    <h2>Créer une Intervention</h2>
+    <form (ngSubmit)="onSubmit()" #interventionForm="ngForm">
+      <div class="form-group">
+        <label for="idReclamation">ID Réclamation</label>
+        <input
+          type="number"
+          id="idReclamation"
+          name="idReclamation"
+          [(ngModel)]="formData.idReclamation"
+          readonly
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="duree">Durée (heures)</label>
+        <input
+          type="number"
+          id="duree"
+          name="duree"
+          [(ngModel)]="formData.duree"
+          required
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="technicien">Technicien</label>
+        <input
+          type="text"
+          id="technicien"
+          name="technicien"
+          [(ngModel)]="formData.technicien"
+          required
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="pieceRechange">Pièce de Rechange</label>
+        <select
+        id="pieceRechange"
+        name="pieceRechange"
+        [(ngModel)]="formData.pieceRechange"
+        required
+        class="form-control"
+      >
+        <option *ngFor="let piece of pieces" [value]="piece.PieceId">
+          {{ piece.IntitulePiece }}
+        </option>
+      </select>
+      
+      </div>
+  
+      <div class="form-group">
+        <label for="dateIntervention">Date d'Intervention</label>
+        <input
+          type="date"
+          id="dateIntervention"
+          name="dateIntervention"
+          [(ngModel)]="formData.dateIntervention"
+          [value]="todayDate"
+          readonly
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" [disabled]="!interventionForm.valid" class="btn btn-primary">
+          Submit
+        </button>
+        <button type="button" (click)="onCancel()" class="btn btn-secondary">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+  

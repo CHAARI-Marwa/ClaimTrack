@@ -1,0 +1,37 @@
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<div class="container">
+    <h2>Liste des Interventions</h2>
+    
+    <!-- Table des interventions -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Reclamation ID</th>
+                <th>Technicien</th>
+                <th>Durée</th>
+                <th>Pièce de Rechange</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let intervention of interventions">
+                <td>{{ intervention.id }}</td>
+                <td>{{ intervention.reclamationId }}</td>
+                <td>{{ intervention.technicien }}</td>
+                <td>{{ intervention.duree }}</td>
+                <td>{{ intervention.pieceRechange?.intitulePiece }}</td>
+                <td>
+                    <button (click)="onEdit(intervention.id)" class="btn-icon">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button (click)="onDelete(intervention.id)" class="btn-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

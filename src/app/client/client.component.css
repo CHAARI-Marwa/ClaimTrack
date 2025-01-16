@@ -66,7 +66,7 @@ p {
 /* Bouton (si nécessaire) */
 button {
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #71a8ba;
     color: white;
     border: none;
     border-radius: 5px;
@@ -78,7 +78,7 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #538db4;
     transform: scale(1.05);
 }
 

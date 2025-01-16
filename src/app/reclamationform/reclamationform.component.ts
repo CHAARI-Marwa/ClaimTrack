@@ -15,7 +15,7 @@ export class ReclamationformComponent implements OnInit {
     dateReclamation: new Date(),
     idUser: 0,
     idArticle: 0,
-    statut: 'En attente'  // Statut par défaut
+    statut: 'En attente' 
   };
 
   constructor(private reclamationService: ReclamationService,private route: ActivatedRoute, private router: Router) {}

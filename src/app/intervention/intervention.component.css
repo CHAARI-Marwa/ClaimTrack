@@ -1,0 +1,70 @@
+.container {
+    background-color: #f8f9fa; /* Fond très clair, presque blanc */
+    padding: 2rem;
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Ombre légère */
+    max-width: 100%;
+    margin: 2rem auto;
+    width: 100%; /* Assurer la largeur maximale disponible */
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Table des interventions */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #dee2e6; /* Bordure grise */
+}
+
+.table th {
+    background-color: #f1f1f1;
+    color: #495057;
+    font-weight: bold;
+}
+
+.table td {
+    background-color: #fff;
+    color: #495057;
+}
+
+/* Style des boutons icônes */
+.btn-icon {
+    background: none;
+    border: none;
+    color: #71a8ba;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.btn-icon:hover {
+    opacity: 0.8;
+}
+
+/* Formulaire responsive */
+@media (max-width: 767px) {
+    .container {
+        padding: 1.5rem; /* Réduire le padding sur les petits écrans */
+    }
+
+    .table th, .table td {
+        padding: 0.5rem;
+    }
+
+    .btn-icon {
+        padding: 0.25rem;
+    }
+}

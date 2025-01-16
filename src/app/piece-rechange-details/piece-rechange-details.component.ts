@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { PieceRechangeService } from 'src/services/PieceRechange.service';
 import { ToastrService } from 'ngx-toastr';
 import { PieceRechangeDetails } from 'src/models/PieceRechangeDetails';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-piece-rechange-details',
@@ -22,16 +24,37 @@ export class PieceRechangeDetailsComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    if (confirm('Are you sure to delete this record?')) {
-      this.PieceRechangeService.deletePieceRechangeDetails(id)
-        .subscribe({
-          next: res => {
-            this.PieceRechangeService.refreshList(); 
-            this.toastr.error('Deleted successfully', 'Piece Rechange Details');
-          },
-          error: err => { console.log(err); }
-        });
-    }
+    Swal.fire({
+      title: 'Êtes-vous sûr ?',
+      text: "Vous ne pourrez pas annuler cette action !",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Oui, supprimer!',
+      cancelButtonText: 'Annuler',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.PieceRechangeService.deletePieceRechangeDetails(id)
+          .subscribe({
+            next: res => {
+              this.PieceRechangeService.refreshList();
+              Swal.fire(
+                'Supprimé!',
+                'L\'élément a été supprimé avec succès.',
+                'success'
+              );
+            },
+            error: err => { 
+              console.log(err); 
+              Swal.fire(
+                'Erreur',
+                'Une erreur est survenue lors de la suppression.',
+                'error'
+              );
+            }
+          });
+      }
+    });
   }
+  
 
 }
