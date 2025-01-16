@@ -1,4 +1,3 @@
-/* Style général pour le conteneur */
 .form-article-container {
     max-width: 600px;
     margin: 20px auto;
@@ -7,42 +6,41 @@
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrer le contenu du formulaire */
+    text-align: left;
 }
 
-/* Style des groupes de formulaire */
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Style des labels */
 .form-group label {
-    display: block;
+    width: 45%;
     font-weight: bold;
-    margin-bottom: 5px;
     color: #333;
+    margin-bottom: 5px;
 }
 
-/* Style des champs d'entrée */
 .form-group input {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s, box-shadow 0.3s;
+    margin-top: 0;
 }
 
-/* Effet focus pour les champs d'entrée */
 .form-group input:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
     outline: none;
 }
 
-/* Style du bouton */
 .btn {
-    display: inline-block;
+    display: block;
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
@@ -53,8 +51,8 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
-    width: auto;  /* Ne pas occuper toute la largeur */
-    margin-top: 20px;  /* Espacement au-dessus du bouton */
+    width: auto;
+    margin: 20px auto 0;
 }
 
 .btn:hover {
@@ -66,19 +64,27 @@
     cursor: not-allowed;
 }
 
-/* Améliorations supplémentaires */
 button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(40, 110, 167, 0.3);
 }
 
-/* Style pour une meilleure expérience mobile */
 @media (max-width: 768px) {
     .form-article-container {
         padding: 15px;
     }
 
+    .form-group {
+        flex-direction: column; 
+        align-items: stretch;
+    }
+
+    .form-group label, .form-group input {
+        width: 100%; 
+        margin-bottom: 5px;
+    }
+
     .btn {
-        width: auto; /* Assure que le bouton garde ses dimensions */
+        width: auto;
     }
 }

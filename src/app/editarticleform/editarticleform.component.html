@@ -1,6 +1,5 @@
-<!-- edit-article-form.component.html -->
-
-<form (ngSubmit)="onSubmit()" #editArticleForm="ngForm">
+<div class="form-article-container">
+  <form (ngSubmit)="onSubmit()" #editArticleForm="ngForm">
     <div class="form-group">
       <label for="nomArticle">Nom de l'article</label>
       <input
@@ -8,11 +7,11 @@
         id="nomArticle"
         [(ngModel)]="article.nomArticle"
         name="nomArticle"
-        class="form-control"
         required
+        class="form-control"
       />
     </div>
-  
+
     <div class="form-group">
       <label for="idUser">ID de l'utilisateur</label>
       <input
@@ -20,11 +19,11 @@
         id="idUser"
         [(ngModel)]="article.idUser"
         name="idUser"
-        class="form-control"
         required
+        class="form-control"
       />
     </div>
-  
+
     <div class="form-group">
       <label for="dateAchat">Date d'achat</label>
       <input
@@ -32,11 +31,11 @@
         id="dateAchat"
         [(ngModel)]="article.dateAchat"
         name="dateAchat"
-        class="form-control"
         required
+        class="form-control"
       />
     </div>
-  
+
     <div class="form-group">
       <label for="dureeGarantie">Durée de garantie (en mois)</label>
       <input
@@ -44,10 +43,17 @@
         id="dureeGarantie"
         [(ngModel)]="article.dureeGarantie"
         name="dureeGarantie"
-        class="form-control"
         required
+        class="form-control"
       />
     </div>
-  
-    <button type="submit" class="btn btn-primary" [disabled]="!editArticleForm.valid">Mettre à jour l'article</button>
-  </form>  
+
+    <button
+      type="submit"
+      class="btn btn-success"
+      [disabled]="!editArticleForm.valid"
+    >
+      Mettre à jour l'article
+    </button>
+  </form>
+</div>

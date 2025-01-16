@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ArticleDto } from 'src/models/articleDto';
 import { ReclamationDTO } from 'src/models/reclamation';
+import { ArticleVenduService } from 'src/services/articlevendu.service';
 import { ReclamationService } from 'src/services/reclamation.service';
 
 @Component({
@@ -18,7 +20,7 @@ export class ReclamationformComponent implements OnInit {
     statut: 'En attente'  // Statut par défaut
   };
 
-  constructor(private reclamationService: ReclamationService,private route: ActivatedRoute, private router: Router) {}
+  constructor(private reclamationService: ReclamationService,private route: ActivatedRoute, private router: Router,private articleService: ArticleVenduService) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -30,14 +32,34 @@ export class ReclamationformComponent implements OnInit {
   }
 
   submitReclamation(): void {
-    this.reclamationService.addReclamation(this.reclamation).subscribe(
-      (response) => {
-        console.log('Reclamation ajoutée avec succès', response);
-        this.router.navigate([`/dashboardclient/${this.reclamation.idUser}`]);
+    this.articleService.getArticleById(this.reclamation.idArticle).subscribe(
+      (article: ArticleDto) => {
+        const dateReclamation = new Date(this.reclamation.dateReclamation);
+        const dateAchat = new Date(article.dateAchat);
+        
+        const diffInTime = dateReclamation.getTime() - dateAchat.getTime();
+        const diffInMonths = diffInTime / (1000 * 3600 * 24 * 30);
+  
+        if (diffInMonths <= article.dureeGarantie) {
+          this.reclamation.statut = 'Gratuit';
+        } else {
+          this.reclamation.statut = 'Payant';
+        }
+  
+        this.reclamationService.addReclamation(this.reclamation).subscribe(
+          (response) => {
+            console.log('Réclamation ajoutée avec succès', response);
+            this.router.navigate([`/dashboardclient/${this.reclamation.idUser}`]);
+          },
+          (error: any) => {
+            console.error('Erreur lors de l\'ajout de la réclamation', error);
+          }
+        );
       },
-      (error) => {
-        console.error('Erreur lors de l\'ajout de la réclamation', error);
+      (error: any) => {
+        console.error('Erreur lors de la récupération de l\'article', error);
       }
     );
   }
+  
 }
