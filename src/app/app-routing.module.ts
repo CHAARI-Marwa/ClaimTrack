@@ -10,6 +10,9 @@ import { HomeadminComponent } from './homeadmin/homeadmin.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { ClientComponent } from './client/client.component';
 import { ArticleformComponent } from './articleform/articleform.component';
+import { InterventionComponent } from './intervention/intervention.component';
+import { EdituserformComponent } from './edituserform/edituserform.component';
+import { EditarticleformComponent } from './editarticleform/editarticleform.component';
 
 const routes: Routes = [
   {
@@ -19,9 +22,11 @@ const routes: Routes = [
       { path: 'articles', component: ArticleVenduComponent },
       { path: 'pieces', component: PieceRechangeDetailsComponent },
       { path: 'reclamations', component: ReclamationComponent },
-      { path: 'interventions', component: HomeadminComponent },
+      { path: 'interventions', component: InterventionComponent },
       { path: 'clients', component: ClientComponent },
-      { path: 'addarticle', component: ArticleformComponent },
+      { path: 'addarticle/:id', component: ArticleformComponent },
+      { path: 'edituser/:id', component: EdituserformComponent },
+      { path: 'editarticle/:id', component: EditarticleformComponent },
     ],
   },
   {

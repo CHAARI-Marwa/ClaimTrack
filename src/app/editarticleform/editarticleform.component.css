@@ -7,41 +7,40 @@
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrer le contenu du formulaire */
-}
-
-/* Style des groupes de formulaire */
-.form-group {
+  }
+  
+  /* Style des groupes de formulaire */
+  .form-group {
     margin-bottom: 15px;
-}
-
-/* Style des labels */
-.form-group label {
+  }
+  
+  /* Style des labels */
+  .form-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     color: #333;
-}
-
-/* Style des champs d'entrée */
-.form-group input {
+  }
+  
+  /* Style des champs d'entrée */
+  .form-group input {
     width: 100%;
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
     transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-/* Effet focus pour les champs d'entrée */
-.form-group input:focus {
+  }
+  
+  /* Effet focus pour les champs d'entrée */
+  .form-group input:focus {
     border-color: #007bff;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
     outline: none;
-}
-
-/* Style du bouton */
-.btn {
+  }
+  
+  /* Style du bouton */
+  .btn {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -53,32 +52,31 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s, box-shadow 0.3s;
-    width: auto;  /* Ne pas occuper toute la largeur */
-    margin-top: 20px;  /* Espacement au-dessus du bouton */
-}
-
-.btn:hover {
+  }
+  
+  .btn:hover {
     background-color: #4695b0;
-}
-
-.btn:disabled {
-    background-color: #c3cce6;
+  }
+  
+  .btn:disabled {
+    background-color: #c3d7e6;
     cursor: not-allowed;
-}
-
-/* Améliorations supplémentaires */
-button:focus {
+  }
+  
+  /* Améliorations supplémentaires */
+  button:focus {
     outline: none;
-    box-shadow: 0 0 5px rgba(40, 110, 167, 0.3);
-}
-
-/* Style pour une meilleure expérience mobile */
-@media (max-width: 768px) {
+    box-shadow: 0 0 5px rgba(40, 114, 167, 0.3);
+  }
+  
+  /* Style pour une meilleure expérience mobile */
+  @media (max-width: 768px) {
     .form-article-container {
-        padding: 15px;
+      padding: 15px;
     }
-
+  
     .btn {
-        width: auto; /* Assure que le bouton garde ses dimensions */
+      width: 100%;
     }
-}
+  }
+  

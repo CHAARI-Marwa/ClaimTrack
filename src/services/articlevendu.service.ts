@@ -31,4 +31,12 @@ export class ArticleVenduService {
     return this.http.get<ArticleDto[]>(`${this.apiUrl}/user/${userId}`);
   }
 
+  deleteArticle(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+  }
+
+  updateArticle(id: number, article: ArticleDto): Observable<ArticleDto> {
+    return this.http.put<ArticleDto>(`${this.apiUrl}/${id}`, article);
+  }
+
 }

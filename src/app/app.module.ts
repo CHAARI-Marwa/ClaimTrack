@@ -21,6 +21,9 @@ import { HomeadminComponent } from './homeadmin/homeadmin.component';
 import { ReclamationComponent } from './reclamation/reclamation.component';
 import { ClientComponent } from './client/client.component';
 import { ArticleformComponent } from './articleform/articleform.component';
+import { InterventionComponent } from './intervention/intervention.component';
+import { EdituserformComponent } from './edituserform/edituserform.component';
+import { EditarticleformComponent } from './editarticleform/editarticleform.component';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { ArticleformComponent } from './articleform/articleform.component';
     ReclamationComponent,
     ClientComponent,
     ArticleformComponent,
+    InterventionComponent,
+    EdituserformComponent,
+    EditarticleformComponent,
   ],
   imports: [
     BrowserModule,

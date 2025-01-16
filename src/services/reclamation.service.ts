@@ -24,5 +24,9 @@ export class ReclamationService {
   addReclamation(reclamation: ReclamationDTO): Observable<ReclamationDTO> {
     return this.http.post<ReclamationDTO>(this.apiUrl, reclamation);
   }
+
+  deleteReclamationByArticleId(articleId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/by-article/${articleId}`);
+  }
   
 }

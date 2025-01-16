@@ -16,14 +16,14 @@
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
           <td>{{ user.email}}</td>
-          <td><button (click)="addArticle()">
-            <span>add</span>
+          <td><button (click)="addArticle(user.id)">
+            <span>+</span>
           </button>
-          <td><button (click)="editUser(user)">
-            <span>edit</span>
+          <td><button (click)="editUser(user.id)">
+            <span>Modifier</span>
           </button>
           <td><button (click)="deleteUser(user.id)">
-            <span>delete</span>
+            <span>Supprimer</span>
           </button>
         </tr>
       </tbody>

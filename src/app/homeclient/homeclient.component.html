@@ -11,6 +11,7 @@
         <th>Statut</th>
         <th>Date de réclamation</th>
         <th>ID Article</th>
+        <th>Supprimer</th>
       </tr>
     </thead>
     <tbody>
@@ -19,7 +20,10 @@
         <td>{{ reclamation.description }}</td>
         <td>{{ reclamation.statut }}</td>
         <td>{{ reclamation.dateReclamation | date: 'short' }}</td>
-        <td>{{ reclamation.idArticle }}</td>
+        <td>{{ reclamation.idArticle}}</td>
+        <td><button (click)="deleteReclamation(reclamation.idArticle)">
+          <span>Supprimer</span>
+        </button>
       </tr>
     </tbody>
   </table>

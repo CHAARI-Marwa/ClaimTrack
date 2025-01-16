@@ -28,8 +28,8 @@ export class ClientComponent implements OnInit {
     );
   }
 
-  addArticle(): void {
-    this.router.navigate(['dashboardadmin/addarticle']);
+  addArticle(id: number): void {
+    this.router.navigate([`dashboardadmin/addarticle/${id}`]);
   }
 
   deleteUser(id: number): void {
@@ -46,17 +46,7 @@ export class ClientComponent implements OnInit {
     }
   }
 
-  editUser(user: User): void {
-    const updatedUser: User = { ...user, firstName: 'NouveauNom' }; // Exemple de mise à jour
-    this.userService.editUser(updatedUser).subscribe(
-      (updated) => {
-        const index = this.users.findIndex((u) => u.id === updated.id);
-        if (index !== -1) this.users[index] = updated;
-        console.log('Utilisateur modifié avec succès');
-      },
-      (error) => {
-        console.error('Erreur lors de la modification de l\'utilisateur', error);
-      }
-    );
+  editUser(userId: number): void {
+    this.router.navigate([`dashboardadmin/edituser/${userId}`]);
   }
 }
