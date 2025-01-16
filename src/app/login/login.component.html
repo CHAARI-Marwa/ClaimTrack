@@ -1,18 +1,18 @@
-<form [formGroup]="form" (ngSubmit)="sub()">
-
-    <input  hidden="true"  matInput class="form-control" formControlName="yourfieldname">
-    
-    <p>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Email" formControlName="email">
-        </mat-form-field>
-    </p>
-    
-    <p>
-        <mat-form-field appearance="fill">
-            <input matInput placeholder="Password" formControlName="password">
-        </mat-form-field>
-    </p>
-    
-    <button type="submit" >Submit</button>
-</form>
+<form [formGroup]="form" (ngSubmit)="sub()" class="form-article-container">
+    <div class="form-group">
+      <input hidden="true" class="form-control" formControlName="yourfieldname">
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" type="email" class="form-control" formControlName="email" placeholder="Email">
+    </div>
+  
+    <div class="form-group">
+      <label for="password">Mot de passe</label>
+      <input id="password" type="password" class="form-control" formControlName="password" placeholder="Mot de passe">
+    </div>
+  
+    <button type="submit" class="btn">Connexion</button>
+  </form>
+  

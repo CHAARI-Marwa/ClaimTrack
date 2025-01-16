@@ -9,6 +9,8 @@
           <th>Utilisateur</th>
           <th>Date d'achat</th>
           <th>Durée de garantie</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
         </tr>
       </thead>
       <tbody>
@@ -17,7 +19,12 @@
           <td>{{ article.idUser }}</td>
           <td>{{ article.dateAchat | date }}</td>
           <td>{{ article.dureeGarantie }} mois</td>
-          
+          <td><button (click)="edit(article.id)">
+            <span>Modifier</span>
+          </button>
+          <td><button (click)="deleteArticle(article.id)">
+            <span>Supprimer</span>
+          </button>
         </tr>
       </tbody>
     </table>

@@ -12,6 +12,8 @@ import { ClientComponent } from './client/client.component';
 import { ArticleformComponent } from './articleform/articleform.component';
 import { InterventionFormComponent } from './intervention-form/intervention-form.component';
 import { InterventionComponent } from './intervention/intervention.component';
+import { EdituserformComponent } from './edituserform/edituserform.component';
+import { EditarticleformComponent } from './editarticleform/editarticleform.component';
 
 const routes: Routes = [
   {
@@ -23,7 +25,9 @@ const routes: Routes = [
       { path: 'reclamations', component: ReclamationComponent },
       { path: 'interventions', component: InterventionComponent },
       { path: 'clients', component: ClientComponent },
-      { path: 'addarticle', component: ArticleformComponent },
+      { path: 'addarticle/:id', component: ArticleformComponent },
+      { path: 'edituser/:id', component: EdituserformComponent },
+      { path: 'editarticle/:id', component: EditarticleformComponent },
     ],
   },
   {
@@ -45,11 +49,6 @@ const routes: Routes = [
   {
     path: 'dashboardadmin/pieces',
     component: PieceRechangeDetailsComponent
-  },
-  {
-    path: 'dashboardadmin/reclamations',
-    component: HomeadminComponent
-
   },
   {
     path: 'dashboardadmin/reclamations',

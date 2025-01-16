@@ -12,6 +12,7 @@ import { ReclamationService } from 'src/services/reclamation.service';
 })
 export class HomeclientComponent implements OnInit{
   constructor(private route: ActivatedRoute,private rs: ReclamationService, private articleVenduService: ArticleVenduService,private router: Router){}
+  userId: number=0;
   reclamations: ReclamationDTO[] = [];
   articles: ArticleDto[] = [];
   isLoading = true;
@@ -48,7 +49,6 @@ export class HomeclientComponent implements OnInit{
     }
   
     goToArticleDetail(userId: number, articleId: number): void {
-      // Naviguer vers la page de détail avec les paramètres userId et articleId
       this.router.navigate([`/reclamation/${userId}/${articleId}`]);
     }
 
@@ -56,18 +56,19 @@ export class HomeclientComponent implements OnInit{
       this.router.navigate(['/login']);
     }
     
-  // loadReclamations(): void {
-  //   this.rs.getAllReclamations().subscribe(
-  //     (data) => {
-  //       this.reclamations = data;
-  //       console.log(this.reclamations)
-  //       this.isLoading = false;
-  //     },
-  //     (error) => {
-  //       this.errorMessage = 'Erreur lors du chargement des réclamations.';
-  //       this.isLoading = false;
-  //       console.error(error);
-  //     }
-  //   );
-  // }
+    deleteReclamation(articleId: number) {
+      this.rs.deleteReclamationByArticleId(articleId).subscribe({
+        next: () => {
+          alert('Réclamation supprimée avec succès');
+          this.loadReclamationsByUserId(this.userId);
+        },
+        error: (err) => {
+          if (err.status === 404) {
+            alert(`Aucune réclamation trouvée pour l'article avec l'ID ${articleId}`);
+          } else {
+            alert('Erreur lors de la suppression de la réclamation');
+          }
+        }
+      });
+    }
 }

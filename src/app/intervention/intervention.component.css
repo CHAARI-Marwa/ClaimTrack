@@ -1,46 +1,60 @@
+/* Conteneur principal de la liste des interventions */
 .container {
-    background-color: #f8f9fa; /* Fond très clair, presque blanc */
-    padding: 2rem;
-    border-radius: 8px; /* Coins arrondis */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Ombre légère */
-    max-width: 100%;
-    margin: 2rem auto;
-    width: 100%; /* Assurer la largeur maximale disponible */
+    padding: 60px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 1500px;
+    margin: 40px auto;
+    width: 100%; /* Utilisation d'une largeur presque totale de l'\u00e9cran */
 }
 
+/* Titre principal */
 h2 {
-    font-size: 1.75rem;
-    font-weight: bold;
-    color: #6c757d;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 40px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
-/* Table des interventions */
+/* Tableau */
 .table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 1rem;
+    margin-bottom: 30px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    overflow: hidden; /* Bordures arrondies des cellules de la table */
 }
 
+/* En-t\u00eates de tableau */
 .table th, .table td {
-    padding: 0.75rem;
-    text-align: left;
-    border: 1px solid #dee2e6; /* Bordure grise */
+    padding: 15px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #e0e0e0;
+    color: #34495e;
 }
 
 .table th {
-    background-color: #f1f1f1;
-    color: #495057;
+    background-color: #ecf0f1;
     font-weight: bold;
 }
 
 .table td {
-    background-color: #fff;
-    color: #495057;
+    background-color: #ffffff;
 }
 
-/* Style des boutons icônes */
+.table tr:nth-child(even) td {
+    background-color: #f8f9fa;
+}
+
+.table tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* Style des boutons ic\u00f4nes */
 .btn-icon {
     background: none;
     border: none;
@@ -48,16 +62,22 @@ h2 {
     font-size: 1.25rem;
     cursor: pointer;
     padding: 0.5rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .btn-icon:hover {
-    opacity: 0.8;
+    background-color: #ecf0f1;
+    transform: scale(1.05);
+}
+
+.btn-icon:active {
+    transform: scale(0.98);
 }
 
 /* Formulaire responsive */
 @media (max-width: 767px) {
     .container {
-        padding: 1.5rem; /* Réduire le padding sur les petits écrans */
+        padding: 1.5rem; /* R\u00e9duire le padding sur les petits \u00e9crans */
     }
 
     .table th, .table td {

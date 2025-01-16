@@ -2,7 +2,7 @@
   .logout-button {
     padding: 10px 15px;
     font-size: 1rem;
-    background-color: #4695b0; /* Rouge */
+    background-color: #71a8ba; /* Rouge */
     color: white;
     border: none;
     border-radius: 4px;
@@ -11,7 +11,7 @@
   }
   
   .logout-button:hover {
-    background-color: #4695b0; /* Couleur plus foncée au survol */
+    background-color: #71a8ba; /* Couleur plus foncée au survol */
   }  
 
 /* Conteneur principal de la liste d'articles */
@@ -82,7 +82,7 @@ p {
 /* Bouton (si nécessaire) */
 button {
     padding: 10px 20px;
-    background-color: #3498db;
+    background-color: #71a8ba;
     color: white;
     border: none;
     border-radius: 5px;
@@ -94,7 +94,7 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #71a8ba;
     transform: scale(1.05);
 }
 

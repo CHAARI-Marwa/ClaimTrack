@@ -13,17 +13,17 @@
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
-          <td>{{ user.firstName }}</td>
-          <td>{{ user.lastName }}</td>
-          <td>{{ user.email}}</td>
-          <td><button (click)="addArticle()">
-            <span>add</span>
+          <td *ngIf="user.role === 'client'">{{ user.firstName }}</td>
+          <td *ngIf="user.role === 'client'">{{ user.lastName }}</td>
+          <td *ngIf="user.role === 'client'">{{ user.email}}</td>
+          <td *ngIf="user.role === 'client'"><button (click)="addArticle(user.id)">
+            <span>+</span>
           </button>
-          <td><button (click)="editUser(user)">
-            <span>edit</span>
+          <td *ngIf="user.role === 'client'"><button (click)="editUser(user.id)">
+            <span>Modifier</span>
           </button>
-          <td><button (click)="deleteUser(user.id)">
-            <span>delete</span>
+          <td *ngIf="user.role === 'client'"><button (click)="deleteUser(user.id)">
+            <span>Supprimer</span>
           </button>
         </tr>
       </tbody>

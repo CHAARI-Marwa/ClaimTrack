@@ -23,6 +23,8 @@ import { ClientComponent } from './client/client.component';
 import { ArticleformComponent } from './articleform/articleform.component';
 import { InterventionFormComponent } from './intervention-form/intervention-form.component';
 import { InterventionComponent } from './intervention/intervention.component';
+import { EdituserformComponent } from './edituserform/edituserform.component';
+import { EditarticleformComponent } from './editarticleform/editarticleform.component';
 
 
 @NgModule({
@@ -41,6 +43,9 @@ import { InterventionComponent } from './intervention/intervention.component';
     ArticleformComponent,
     InterventionFormComponent,
     InterventionComponent,
+    InterventionComponent,
+    EdituserformComponent,
+    EditarticleformComponent,
   ],
   imports: [
     BrowserModule,

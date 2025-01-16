@@ -38,7 +38,7 @@ export class LoginComponent  implements OnInit {
         if(response.user.role=="client"){
           this.router.navigate(['/dashboardclient', userId]);}
         else{
-          this.router.navigate(['/dashboardadmin']);
+          this.router.navigate(['/dashboardadmin/clients']);
         }
       },
       (error) => {

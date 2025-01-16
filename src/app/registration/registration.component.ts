@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UserService } from 'src/services/user.service';
 
 
@@ -11,7 +12,7 @@ import { UserService } from 'src/services/user.service';
 })
 export class RegistrationComponent implements OnInit {
 
-  constructor(private us: UserService){}
+  constructor(private us: UserService, private router:Router){}
   form!: FormGroup;
 
   ngOnInit() {
@@ -31,7 +32,7 @@ export class RegistrationComponent implements OnInit {
   sub():void{
     const user={...this.form.value, role:"client", articlesVendus:[]}
     this.us.registerUser(user).subscribe(()=>{
-      console.log("done")
+      this.router.navigate(['login']);
     })
   }
 }
